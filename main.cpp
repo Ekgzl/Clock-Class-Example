@@ -11,9 +11,19 @@ class clockType
         public:
             void setTime(int hr,int min,int sec)
             {
-                this->hr = hr;
-                this->min = min;
-                this->sec = sec;
+                if(0<= hr && hr<24)
+                    this->hr = hr;
+                else
+                    hr=0;
+                if(0<=min && min<60)
+                    this->min = min;
+                else
+                    min = 0;
+
+                if(0<=sec && sec<60)
+                    this->sec = sec;
+                else
+                    sec=0;
             }
 
             void getTime(int& hr, int& min, int& sec)const
@@ -64,6 +74,19 @@ class clockType
                 return hr;
             }
 
+            bool isEqual(const clockType tmpClock)
+            {
+                return(tmpClock.hr == hr && tmpClock.min == min && tmpClock.sec == sec);
+            }
+
+            clockType& operator=(clockType tmpClock)
+                    {
+                        this->hr = tmpClock.hr;
+                        this->sec = tmpClock.sec;
+                        this->min = tmpClock.min;
+                        return *this;
+                    }
+
             clockType(int hr,int min,int sec) : hr(hr),min(min),sec(sec) {}
             clockType() : hr(0),min(0),sec(0) {}
 
@@ -71,9 +94,5 @@ class clockType
 
 int main()
 {
-    clockType myClock(12, 30, 58);
-    myClock.printTime();
-    myClock.incrementSeconds();
-    myClock.incrementSeconds();
-    myClock.printTime();
+
 }
