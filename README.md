@@ -1,7 +1,26 @@
-# Clock Class Example
+# ClockType Class C++ Example
 
-This simple C++ program defines a class called `clockType`. This class is used to represent a clock and holds the time in terms of hours, minutes, and seconds. Additionally, it provides a method `incrementSeconds()` to increase the time by one second.
+This example C++ code defines a class named `clockType` and performs basic clock operations.
 
-## How to Use
+## Code Content
 
-Firstly, an object of the `clockType` class is created, and the time is set using the `setTime()` method specifying the hours, minutes, and seconds. Then, the `incrementSeconds()` function is called to increase the time by one second, and finally, the new time is printed using the `printTime()` method.
+This C++ code contains a class named `clockType`. This class stores hour, minute, and second information and provides various functions to set, increment, and display this information.
+
+## Usage
+
+By using this code, you can create a `clockType` object, set the time, increment it, and display the results.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Definition and functions of the clockType class...
+
+int main()
+{
+    clockType myClock(12, 30, 58);
+    myClock.printTime();
+    myClock.incrementSeconds();
+    myClock.incrementSeconds();
+    myClock.printTime();
+}
