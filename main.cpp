@@ -41,7 +41,6 @@ class clockType
                 return sec;
             }
 
-
             int incrementMinutes()
             {
                 if(min==59)
@@ -72,20 +71,9 @@ class clockType
 
 int main()
 {
-// Parametreli kurucu fonksiyon kullanarak bir saat oluştur
     clockType myClock(12, 30, 58);
-
-    // Zamanı yazdır
     myClock.printTime();
-
-    // Saniyeyi artır
     myClock.incrementSeconds();
     myClock.incrementSeconds();
-
-    // Zamanı tekrar yazdır
     myClock.printTime();
-
-    return 0;
-
-
 }
